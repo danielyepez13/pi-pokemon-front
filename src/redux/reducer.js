@@ -45,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
 
         case "FILTER_TYPES": {
             let myPokemons = [...state.myPokemons]
-            let filterResults = [...state.pokemonFiltered]
+            let filterResults = []
 
             if (type !== action.payload || origin) {
                 filterResults = filterByType(myPokemons, action.payload);
@@ -267,7 +267,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 myPokemons: allPokemons,
                 pokemonFiltered: endResultFiltered,
-                currentPage: (endResultFiltered.length < state.perPage) ? 1 : state.currentPage,
+                currentPage: 1,
                 deleteSuccess: true,
             }
         }
@@ -298,6 +298,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemonFiltered: state.myPokemons,
+                currentPage: 1
             }
         }
 
