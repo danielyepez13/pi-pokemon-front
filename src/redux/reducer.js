@@ -118,7 +118,7 @@ const rootReducer = (state = initialState, action) => {
         case "GET_NAME": {
             let endResult = [...state.myPokemons];
             let [pokemonApi, pokemonBD] = action.payload;
-
+            type = pokemonApi.types[0].name;
             endResult.map(pokemon => {
                 pokemon.selected = false;
                 return pokemon;
@@ -169,7 +169,7 @@ const rootReducer = (state = initialState, action) => {
             const allPokemons = [...state.myPokemons];
             let endResult = allPokemons.filter(pokemon => pokemon.id !== pokemonUpdated.id);
             endResult.push(pokemonUpdated);
-
+            type = pokemonUpdated.types[0].name;
             let filteredEndResult = allFiltersAndSortings(endResult, type, origin, orderAlph, orderAtk, firstOrder, secondOrder, pokemonUpdated);
 
             return {
