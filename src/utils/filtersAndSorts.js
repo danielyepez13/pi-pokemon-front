@@ -72,7 +72,7 @@ export function sortAlphabetically(filterResults, order, orderAtk) {
 }
 
 export function allFiltersAndSortings(allPokemons, type, origin, orderAlph, orderAtk, firstOrder, secondOrder, addPokemon){
-    let endResultFiltered = allPokemons;
+    let endResultFiltered = [...allPokemons];
     if (type || origin || orderAlph || orderAtk) {
         if (type) {
             endResultFiltered = endResultFiltered.filter(pokemon => {
