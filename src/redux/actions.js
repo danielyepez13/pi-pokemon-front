@@ -59,7 +59,7 @@ export const getDetail = (idPokemon) => async (dispatch) => {
 
 export const getName = (name) => async (dispatch) => {
     try {
-        const response = await fetch(`${URL}/pokemons/name/?name=${name}`);
+        const response = await fetch(`${URL}pokemons/name/?name=${name}`);
         if (!response.ok) {
             throw new Error(response.statusText);
         }
