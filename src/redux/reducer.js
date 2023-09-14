@@ -154,7 +154,7 @@ const rootReducer = (state = initialState, action) => {
             const pokemonAdded = action.payload
             allPokemons.push(pokemonAdded);
             let filteredEndResult = allFiltersAndSortings(allPokemons, type, origin, orderAlph, orderAtk, firstOrder, secondOrder, pokemonAdded);
-
+            type = pokemonAdded.types[0].name;
             return {
                 ...state,
                 myPokemons: allPokemons,
