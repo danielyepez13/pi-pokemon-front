@@ -72,7 +72,7 @@ export const getName = (name) => async (dispatch) => {
     } catch (error) {
         return dispatch({
             type: 'ERROR_ALERT',
-            payload: ["error_name", error.message + ": The pokemon has not been found"],
+            payload: ["error_name", "Bad request: The pokemon has not been found"],
         });
     }
 };
@@ -95,7 +95,7 @@ export const setPokemon = (value) => async (dispatch) => {
     } catch (error) {
         return dispatch({
             type: 'ERROR_ALERT',
-            payload: ["error_form", error.message + ": An unexpected error has occurred, please review the data before submitting it"],
+            payload: ["error_form", "Bad request: An unexpected error has occurred, please review the data before submitting it"],
         });
     }
 }
@@ -118,7 +118,7 @@ export const updatePokemon = (value) => async (dispatch) => {
     } catch (error) {
         return dispatch({
             type: 'ERROR_ALERT',
-            payload: ["error_form", error.message + ": An unexpected error has occurred, please review the data before submitting it"],
+            payload: ["error_form", "Bad request: An unexpected error has occurred, please review the data before submitting it"],
         });
     }
 }
