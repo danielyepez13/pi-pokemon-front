@@ -73,7 +73,7 @@ const Detail = () => {
       </div>
       <div className="extra-details">
         <div className="curiosity">
-          <span onClick={showCuriosity}>¿What is a Pokemon <b>Shiny</b>?</span>
+          <span onClick={showCuriosity}>¿What is a <b>Shiny</b> Pokemon?</span>
           {
             curiosity && (
               <p className='text-shiny'>

@@ -39,7 +39,7 @@ const Generator = () => {
               <button onClick={onActivo} className='btnAgregarIntegrante'>Activate option to Add manually</button>
           </p> :
           <p>
-              <button onClick={onDesactivo} className='btnAgregarIntegrante'>Desactivar opción para Agregar manualmente</button>
+              <button onClick={onDesactivo} className='btnAgregarIntegrante'>Desactive option to Add manuall</button>
           </p>
         }
       </div>
