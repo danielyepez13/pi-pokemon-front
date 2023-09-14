@@ -1,6 +1,6 @@
 const URL = import.meta.env.VITE_URL_BACKEND
 export const getPoks = () => async (dispatch) => {
-    const response = await fetch(`${URL}/pokemons/`)
+    const response = await fetch(`${URL}pokemons/`)
     const result = await response.json();
 
     return dispatch({
@@ -10,7 +10,7 @@ export const getPoks = () => async (dispatch) => {
 };
 
 export const getTypes = () => async (dispatch) => {
-    const response = await fetch(`${URL}/types/`);
+    const response = await fetch(`${URL}types/`);
     const result = await response.json();
 
     return dispatch({
@@ -48,7 +48,7 @@ export const orderAlph = (value) => {
 }
 
 export const getDetail = (idPokemon) => async (dispatch) => {
-    const response = await fetch(`${URL}/pokemons/${idPokemon}`)
+    const response = await fetch(`${URL}pokemons/${idPokemon}`)
     const result = await response.json();
 
     return dispatch({
@@ -79,7 +79,7 @@ export const getName = (name) => async (dispatch) => {
 
 export const setPokemon = (value) => async (dispatch) => {
     try {
-        const response = await fetch(`${URL}/pokemons/`, {
+        const response = await fetch(`${URL}pokemons/`, {
             method: "POST",
             body: JSON.stringify(value),
             headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -102,7 +102,7 @@ export const setPokemon = (value) => async (dispatch) => {
 
 export const updatePokemon = (value) => async (dispatch) => {
     try {
-        const response = await fetch(`${URL}/pokemons/`, {
+        const response = await fetch(`${URL}pokemons/`, {
             method: "PUT",
             body: JSON.stringify(value),
             headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -184,7 +184,7 @@ export const setCurrentPage = (value) => {
 }
 
 export const deletePokemon = (id) => async (dispatch) => {
-    const response = await fetch(`${URL}/pokemons/${id}`, {
+    const response = await fetch(`${URL}pokemons/${id}`, {
         method: "DELETE",
     });
     const result = await response.json();
