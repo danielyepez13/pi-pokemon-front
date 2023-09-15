@@ -218,7 +218,8 @@ const rootReducer = (state = initialState, action) => {
 
         case "DELETE_POKEMON": {
             const allPokemons = [...state.myPokemons];
-            let endResultFiltered = allPokemons.filter(pokemon => pokemon.id !== action.payload)
+            let endResult = allPokemons.filter(pokemon => pokemon.id !== action.payload)
+            let endResultFiltered = [...endResult]
             if (type || origin || orderAlph || orderAtk) {
                 if (type) {
                     endResultFiltered = endResultFiltered.filter(pokemon => {
@@ -271,7 +272,7 @@ const rootReducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                myPokemons: allPokemons,
+                myPokemons: endResult,
                 pokemonFiltered: endResultFiltered,
                 currentPage: 1,
                 deleteSuccess: true,
