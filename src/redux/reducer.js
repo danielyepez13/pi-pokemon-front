@@ -47,7 +47,11 @@ const rootReducer = (state = initialState, action) => {
             let myPokemons = [...state.myPokemons]
             let filterResults = []
 
-            if (type !== action.payload || origin) {
+            if(origin) {
+                myPokemons = filterByOrigin(myPokemons, origin)
+            }
+
+            if (type !== action.payload) {
                 filterResults = filterByType(myPokemons, action.payload);
             }
 
