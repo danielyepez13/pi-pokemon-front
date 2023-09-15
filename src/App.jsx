@@ -6,7 +6,6 @@ import Form from "./views/form/Form";
 import Generator from "./views/generator/Generator";
 import Detail from "./views/detail/Detail";
 import Error404 from "./views/error/Error404";
-import Footer from "./components/footer/Footer";
 import './App.css'
 
 function App() {
@@ -25,11 +24,7 @@ function App() {
         <Route path='/generator' element={<Generator />} />
         <Route path='/detail/:id' element={<Detail />} />
         <Route path='*' element={<Error404 />} />
-      </Routes>
-      
-      {location.pathname !== "/" && (
-        <Footer />
-      )}     
+      </Routes> 
     </>
   )
 }
