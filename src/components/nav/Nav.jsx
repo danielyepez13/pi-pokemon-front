@@ -1,6 +1,7 @@
 import { useDispatch} from 'react-redux'
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import { NavLink } from "react-router-dom"
 import ButtonLink from "../buttonLink/ButtonLink"
 import { getName } from '../../redux/actions'
 import title from "../../img/pokemon-title.png"
@@ -24,7 +25,9 @@ const Nav = () => {
   return (
     <div className='nav'>
       <div className="img-nav">
-        <img src={title} alt="" width={650} height={215} />
+        <NavLink to="/">
+          <img src={title} alt="" width={650} height={215} />
+        </NavLink>
       </div>
       <nav>
         <ul className="buttons">
